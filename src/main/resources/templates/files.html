@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>File Name</th>
+        <th>File Type</th>
+        <th>Creation Date</th>
+        <th>Edition Date</th>
+        <th>File Size</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="fileData : ${fileDataList}">
+        <td th:text="${fileData.id}"></td>
+        <td th:text="${fileData.fileName}"></td>
+        <td th:text="${fileData.fileType}"></td>
+        <td th:text="${fileData.fileCreationDate}"></td>
+        <td th:text="${fileData.fileEditionDate}"></td>
+        <td th:text="${fileData.fileSize}"></td>
+        <td>
+            <a th:href="@{/delete/{id} (id =${fileData.getId()})}">❌</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
