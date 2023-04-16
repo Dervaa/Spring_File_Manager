@@ -19,8 +19,7 @@ public class FileDataRepository implements IFileDataRepository {
 
     private List<FileData> fileDataList = new ArrayList<>();
     private static String DB_Path = "C:\\Users\\petia\\Рабочий стол\\FIle_Manager1\\FIle_Manager1\\src\\main\\resources\\YAML\\DB.yml";
-/*    private final String fileID = "YAML/DB.yaml";*/
-/*    ClassPathResource resource = new ClassPathResource(fileID);*/
+
     ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
     private int idCount=1;
     public FileDataRepository () throws IOException {
