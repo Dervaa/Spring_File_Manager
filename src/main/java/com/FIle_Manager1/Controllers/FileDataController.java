@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -14,6 +15,10 @@ import java.util.List;
 public class FileDataController {
     @Autowired
     private FileDataService fileDataService;
+    @PostMapping("/file/upload")
+    public FileData uploading(Model model){
+        return new FileData();
+    }
 
     @GetMapping("/files")
     public String listWagons(Model model) {

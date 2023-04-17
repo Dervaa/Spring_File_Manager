@@ -30,7 +30,7 @@
         <div class="upload">
             <button type="button" onclick="document.getElementById('uploadForm').style.display='block'">Добавить файлик</button>
             <div id="uploadForm" style="display:none">
-                <form th:action="@{/file/upload}" method="post">
+                <form th:action="/file/upload" method="POST">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" required><br><br>
                     <label for="type">Тип:</label>
