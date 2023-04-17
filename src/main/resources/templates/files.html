@@ -1,35 +1,81 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Манажер</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Type</th>
-        <th>File Name</th>
-        <th>File Type</th>
-        <th>Creation Date</th>
-        <th>Edition Date</th>
-        <th>File Size</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="fileData : ${fileDataList}">
-        <td th:text="${fileData.id}"></td>
-        <td th:text="${fileData.fileName}"></td>
-        <td th:text="${fileData.fileType}"></td>
-        <td th:text="${fileData.fileCreationDate}"></td>
-        <td th:text="${fileData.fileEditionDate}"></td>
-        <td th:text="${fileData.fileSize}"></td>
-        <td>
-            <a th:href="@{/delete/{id} (id =${fileData.getId()})}">❌</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<header>
+    <h1>Манажер</h1>
+    <div class="search">
+        <input type="text" placeholder="Например: docx">
+        <button type="submit">Поиск</button>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Доки</a></li>
+            <li><a href="#">Фотки</a></li>
+            <li><a href="#">Музыка</a></li>
+            <li><a href="#">Видосики</a></li>
+        </ul>
+        <div class="upload">
+            <button type="button" onclick="document.getElementById('uploadForm').style.display='block'">Добавить файлик</button>
+            <div id="uploadForm" style="display:none">
+                <form th:action="@{/file/upload}" method="post">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="type">Тип:</label>
+                    <input type="text" id="type" name="type" required><br><br>
+                    <label for="size">Размер:</label>
+                    <input type="text" id="size" name="size" required><br><br>
+                    <label for="dateCreated">Дата создания:</label>
+                    <input type="datetime-local" id="dateCreated" name="dateCreated" required><br><br>
+                    <label for="dateModified">Дата изменения:</label>
+                    <input type="datetime-local" id="dateModified" name="dateModified" required><br><br>
+                    <button type="submit">Добавить файл</button>
+                </form>
+                <br>
+                <button type="button" onclick="document.getElementById('uploadForm').style.display='none'">Отмена</button>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <h2>Текущая папка</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>File Name</th>
+                <th>File Type</th>
+                <th>Creation Date</th>
+                <th>Edition Date</th>
+                <th>File Size</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="fileData : ${fileDataList}">
+                <td th:text="${filвeData.id}"></td>
+                <td th:text="${fileData.fileName}"></td>
+                <td th:text="${fileData.fileType}"></td>
+                <td th:text="${fileData.fileCreationDate}"></td>
+                <td th:text="${fileData.fileEditionDate}"></td>
+                <td th:text="${fileData.fileSize}"></td>
+                <td>
+                    <a th:href="@{/delete/{id} (id =${fileData.getId()})}">💀</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
 </body>
 </html>
