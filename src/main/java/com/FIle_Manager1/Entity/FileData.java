@@ -13,18 +13,18 @@ public class FileData {
 
     public FileData(Integer id, String fileName, String fileType, Integer fileSize, String fileCreationDate, String fileEditionDate) {
         this.id = id;
-        this.fileType = fileType;
         this.fileName = fileName;
+        this.fileType = fileType;
+        this.fileSize = fileSize;
         this.fileCreationDate = fileCreationDate;
         this.fileEditionDate = fileEditionDate;
-        this.fileSize = fileSize;
     }
 
     public FileData(String fileName, String fileType, Integer fileSize, String fileCreationDate, String fileEditionDate) {
         this.fileType = fileType;
         this.fileName = fileName;
-        this.fileCreationDate = fileEditionDate;
-        this.fileEditionDate = fileCreationDate;
+        this.fileCreationDate = fileCreationDate;
+        this.fileEditionDate = fileEditionDate;
         this.fileSize = fileSize;
     }
 

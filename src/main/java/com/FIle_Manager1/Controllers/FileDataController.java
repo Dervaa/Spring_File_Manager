@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,5 +53,23 @@ public class FileDataController {
         FileDataService.delete(id);
         return "redirect:/files";
     }
-
+    @GetMapping("/edit/{id}")
+    public String editFileById(@PathVariable Integer id, Model model)
+    {
+        List<FileData> fileData = new ArrayList<>();
+        fileData.add(FileDataService.findFileById(id));
+        model.addAttribute("fileData", fileData);
+        return "edit";
+    }
+    @PostMapping("/edit/{id}")
+    public String editFile (@PathVariable Integer id,
+                            @RequestParam("fileName") String fileName,
+                            @RequestParam("fileType") String fileType,
+                            @RequestParam("fileSize") Integer fileSize,
+                            @RequestParam("fileCreationDate") String fileCreationDate,
+                            @RequestParam("fileEditionDate") String fileEditionDate) {
+        FileData fileData = new FileData(id, fileName, fileType, fileSize, fileCreationDate, fileEditionDate);
+        FileDataService.update(fileData);
+        return "redirect:/files";
+    }
 }

@@ -1,12 +1,6 @@
 ---
-- id: 4
-  fileType: "docx"
-  fileName: "file2"
-  fileCreationDate: "23.10.2003"
-  fileEditionDate: "24.10.2004"
-  fileSize: 1024
 - id: 5
-  fileType: "image"
+  fileType: "img"
   fileName: "file2"
   fileCreationDate: "23.10.2003"
   fileEditionDate: "24.10.2004"
@@ -35,3 +29,9 @@
   fileCreationDate: "23.10.2004"
   fileEditionDate: "23.10.2003"
   fileSize: 2048
+- id: 11
+  fileType: "луп"
+  fileName: "пупа"
+  fileCreationDate: "25.10.2005"
+  fileEditionDate: "23.10.2003"
+  fileSize: 1024

@@ -16,13 +16,13 @@
   <div class="header-container">
     <nav class="nav">
       <!--<a href="/" class="nav-link">Главная</a>-->
-      <a href="/files" class="nav-link">Файлы</a>
+      <a href="/files" class="nav-link">Все Файлы</a>
     </nav>
   </div>
 </header>
 <body>
 <header>
-  <h1>Файлы</h1>
+  <h1>Редактирование</h1>
 </header>
 <table class="files-table">
   <thead>
@@ -30,19 +30,20 @@
     <th class="table-header">ID  .</th>
     <th class="table-header"> File Name  .</th>
     <th class="table-header"> File Type  .</th>
+    <th class="table-header"> File Size  .</th>
     <th class="table-header"> Creation Date  .</th>
     <th class="table-header"> Edition Date  .</th>
-    <th class="table-header"> File Size</th>
+
   </tr>
   </thead>
   <tbody>
-  <tr th:each="fileData: ${fileData}" class="fileData-row">
+  <tr th:each="fileData: ${fileData}">
     <form th:action="'/edit/' + ${fileData.getId}" method="post">
       <td th:text="${fileData.getId}" class="table-data"></td>
       <td class="table-data"><input th:value="${fileData.getFileName}" type="text" name="fileName"></td>
       <td class="table-data"><input th:value="${fileData.getFileType}" type="text" name="fileType"></td>
       <td class="table-data"><input th:value="${fileData.getFileSize}" type="number" name="fileSize"></td>
-      <td class="table-data"><input th:value="${fileData.getFileCreationDate}" type="text" name="fileCreationData"></td>
+      <td class="table-data"><input th:value="${fileData.getFileCreationDate}" type="text" name="fileCreationDate"></td>
       <td class="table-data"><input th:value="${fileData.getFileEditionDate}" type="text" name="fileEditionDate"></td>
       <td class="table-change">
         <button type="submit">✅</button>

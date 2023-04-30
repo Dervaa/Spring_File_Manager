@@ -30,9 +30,7 @@ public class FileDataService implements IFileDataService {
     }
 
     @Async
-    public void update(FileData fileData) {
-        fileDataRepository.update(fileData);
-    }
+    public void update(FileData fileData) {fileDataRepository.update(fileData);}
 
     @Async
     public void delete(Integer id) {

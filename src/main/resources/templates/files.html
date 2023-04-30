@@ -37,8 +37,8 @@
         </div>
     </nav>
     <section>
-        <h2>Текущая папка</h2>
-        <table>
+        <h2>Все файлы</h2>
+        <table class="files_table">
             <thead>
             <tr>
                 <th>ID  .</th>
@@ -59,11 +59,10 @@
                 <td th:text="${fileData.fileSize}"></td>
                 <td>
                     <a th:href="@{/delete/{id} (id =${fileData.getId()})}">DELETE</a>
-                    <a th:href="@{/update/{id} (id =${fileData.getId()})}">EDIT</a>
+                    <a th:href="@{/edit/{id} (id =${fileData.getId()})}">EDIT</a>
                 </td>
             </tr>
             </tbody>
-        </table>
         </table>
     </section>
 </main>
