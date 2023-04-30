@@ -84,7 +84,7 @@ public class FileDataRepository implements IFileDataRepository {
     @Async
     public void delete(Integer id)
     {
-        fileDataList.removeIf(wagon -> wagon.getId().equals(id));
+        fileDataList.removeIf(fileData -> fileData.getId().equals(id));
         save();
     }
 

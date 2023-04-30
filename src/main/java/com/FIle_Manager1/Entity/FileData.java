@@ -11,7 +11,7 @@ public class FileData {
     public FileData() {
     }
 
-    public FileData(Integer id, String fileType, String fileName, String fileCreationDate, String fileEditionDate, Integer fileSize) {
+    public FileData(Integer id, String fileName, String fileType, Integer fileSize, String fileCreationDate, String fileEditionDate) {
         this.id = id;
         this.fileType = fileType;
         this.fileName = fileName;
@@ -20,11 +20,11 @@ public class FileData {
         this.fileSize = fileSize;
     }
 
-    public FileData(String fileType, String fileName, String fileCreationDate, String fileEditionDate, Integer fileSize) {
+    public FileData(String fileName, String fileType, Integer fileSize, String fileCreationDate, String fileEditionDate) {
         this.fileType = fileType;
         this.fileName = fileName;
-        this.fileCreationDate = fileCreationDate;
-        this.fileEditionDate = fileEditionDate;
+        this.fileCreationDate = fileEditionDate;
+        this.fileEditionDate = fileCreationDate;
         this.fileSize = fileSize;
     }
 
