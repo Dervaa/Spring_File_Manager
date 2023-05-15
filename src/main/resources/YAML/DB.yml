@@ -1,37 +1,7 @@
 ---
-- id: 5
-  fileType: "img"
-  fileName: "file2"
+- id: 1
+  fileType: "луп"
+  fileName: "биба"
   fileCreationDate: "23.10.2003"
-  fileEditionDate: "24.10.2004"
-  fileSize: 1024
-- id: 7
-  fileType: "луп"
-  fileName: "пупа"
-  fileCreationDate: "23.10.2004"
-  fileEditionDate: "23.10.2003"
-  fileSize: 1024
-- id: 8
-  fileType: "боба"
-  fileName: "биба"
-  fileCreationDate: "25.10.2005"
-  fileEditionDate: "23.10.2003"
+  fileEditionDate: "23.10.2004"
   fileSize: 2048
-- id: 9
-  fileType: "абоба"
-  fileName: "пупа2"
-  fileCreationDate: "25.10.2005"
-  fileEditionDate: "23.10.2003"
-  fileSize: 2048
-- id: 10
-  fileType: "боба"
-  fileName: "биба"
-  fileCreationDate: "23.10.2004"
-  fileEditionDate: "23.10.2003"
-  fileSize: 2048
-- id: 11
-  fileType: "луп"
-  fileName: "пупа"
-  fileCreationDate: "25.10.2005"
-  fileEditionDate: "23.10.2003"
-  fileSize: 1024

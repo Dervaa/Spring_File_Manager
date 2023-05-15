@@ -11,8 +11,12 @@ import java.util.List;
 @Service
 public class FileDataService implements IFileDataService {
 
-    @Autowired
+
     private IFileDataRepository fileDataRepository;
+
+    public FileDataService(IFileDataRepository fileDataRepository) {
+        this.fileDataRepository = fileDataRepository;
+    }
 
     @Async
     public List<FileData> getFileData() {
